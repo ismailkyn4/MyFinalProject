@@ -20,7 +20,7 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        public IResult Add(Product product)
+        public IResult Add(Product product)  //Result classının içine işlem sonucu ve işlem mesajını yazarak add metotunda kullanmış oluyoruz.
         {
             //business codes
             if (product.ProductName.Length<2)
@@ -32,7 +32,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductAdded);
         }
 
-        public IDataResult< List<Product>> GetAll()
+        public IDataResult< List<Product>> GetAll()  //Bu işlemle hem liste dönen hemde işlem başarılı mı,başarısız mı onu döndürmüş olucaz.
         {
             //İş Kodları
             if (DateTime.Now.Hour==22)

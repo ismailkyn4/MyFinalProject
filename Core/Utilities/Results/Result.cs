@@ -6,8 +6,8 @@ namespace Core.Utilities.Results
 {
     public class Result : IResult
     {
-
-        public Result(bool success, string message):this(success) //Burda tek parametre yazarak Bu classın tek paramatre olanını çalıştır dedik. Alt kısımdaki succes çalıştı.
+        //getter readonly'dir ve constructorda set edilebilir.*****İstisnayi bir durumdur *****
+        public Result(bool success, string message):this(success) //Burda tek parametre yazarak Bu classın(result) tek paramatre olanını çalıştır dedik. Alt kısımdaki succes çalıştı.
         {
             Message = message;
         }
@@ -15,7 +15,7 @@ namespace Core.Utilities.Results
         {
             Success = success;
         }
-        public bool Success { get; }
+        public bool Success { get; }  //Okumak için get kullanılır. Yazmak için ise set
 
         public string Message { get; }
     }
